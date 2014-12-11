@@ -1,0 +1,13 @@
+
+.row
+	.column.small-12
+		h2 Applicant Developers
+		hr
+		ul#developers
+			li(ng-repeat="developer in developers")
+				a(ng-href="/developer/{{developer.id}}") {{ developer.name }}
+		.panel.callout.text-center(ng-show="developers.length == 0") No developer applicants yet
+
+.row
+	.column.small-12
+		a.button.expand.radius(href="/apply") Apply

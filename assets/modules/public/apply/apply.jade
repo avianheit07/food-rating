@@ -1,0 +1,26 @@
+.row
+	.column.small-12
+		form(name="applicantForm")
+			label(for="name") Name
+			input#name(type="text",ng-model="applicant.name",required)
+			label(for="email") Email
+			input(type="email",ng-model="applicant.email",required)
+
+			label Skills
+			ul
+				li(ng-repeat="skill in applicant.skills")
+					.row
+						.column.small-6
+							h6 {{skill.name}}
+						.column.small-6
+							star(ng-model="skill.score",limit=5,view-only=true)
+			.row
+				.column.small-4
+					input(type="text",ng-model="skill.name")
+				.column.small-4
+					star(ng-model="skill.score",limit="5")
+				.column.small-4
+					button.tiny.expand(ng-click="add()") add
+			button#submit-applicant.tiny.expand.radius(type="submit",ng-click="submit(applicantForm)", ng-disabled="applicantForm.$invalid") Submit
+
+		a.button.radius.expand(href="/") Back

@@ -1,0 +1,50 @@
+doctype html
+html(ng-app="RegistrationApp")
+    head
+        title Public
+        base(href="http://localhost:1337/")
+        meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
+
+        // STYLES
+        link(rel="stylesheet", href="/styles/dependencies/foundation/foundation.css")
+        link(rel="stylesheet", href="/styles/dependencies/foundation/normalize.css")
+        link(rel="stylesheet", href="/styles/common/developer/developer.css")
+        link(rel="stylesheet", href="/styles/common/list/list.css")
+        link(rel="stylesheet", href="/styles/common/star/star.css")
+        link(rel="stylesheet", href="/styles/public/app.css")
+        link(rel="stylesheet", href="/styles/public/apply/apply.css")
+        // STYLES END
+    body
+        // TEMPLATES
+        script(type="text/javascript", src="/templates/jst_public.js")
+        // TEMPLATES END
+        .row
+            .column.small-12.text-center
+                a(href="/")
+                    h1 Registration App
+        .row
+            .column.small-12
+                section
+                    header
+                    ng-view
+        .row
+            .column.small-8.small-centered
+                h4 Employer's Login
+                hr
+                form(action="/login",method="POST")
+                    input(name="email",type="email",placeholder="email")
+                    input(name="password",type="password",placeholder="password")
+                    button.radius.tiny.expand Login
+        // SCRIPTS
+        script(src="/js/dependencies/angular/angular.js")
+        script(src="/js/dependencies/angular/angular-animate.js")
+        script(src="/js/dependencies/angular/angular-resource.js")
+        script(src="/js/dependencies/angular/angular-route.js")
+        script(src="/js/dependencies/lodash/lodash.js")
+        script(src="/js/public/app.js")
+        script(src="/js/public/apply/ApplyCtrl.js")
+        script(src="/js/common/developer/DeveloperCtrl.js")
+        script(src="/js/common/list/ApplicantModel.js")
+        script(src="/js/common/list/ListCtrl.js")
+        script(src="/js/common/star/StarDirective.js")
+        // SCRIPTS END

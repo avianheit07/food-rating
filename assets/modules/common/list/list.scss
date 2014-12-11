@@ -1,0 +1,17 @@
+@import '../../core_styles/all';
+#developers{
+	list-style: none;
+
+	li{
+		margin: 10px 0px;
+		width: 100%;
+		line-height: 50px;
+		color: $orange;
+		border-radius: 5px;
+		text-indent: 20px;
+		&:hover{
+			background: $mint;
+			color: white;
+		}
+	}
+}
