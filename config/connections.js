@@ -20,15 +20,12 @@
  */
 
 module.exports.connections = {
-
-  /***************************************************************************
-  *                                                                          *
-  * Local disk storage for DEVELOPMENT ONLY                                  *
-  *                                                                          *
-  * Installed by default.                                                    *
-  *                                                                          *
-  ***************************************************************************/
-  local: {
-    adapter: 'sails-disk'
+  'mongo': {
+    adapter: 'sails-mongo',
+    port: 27017,
+    host: 'localhost',
+    user: 'food-master',
+    password: 'sibana',
+    database: 'food'
   }
 };

@@ -4,6 +4,7 @@ module.exports = function (grunt) {
 		'jade:dev',
 		'copy:dev',
 		'jst:dev',
+    'coffee:dev',
 		'sass:dev'
 	]);
 };

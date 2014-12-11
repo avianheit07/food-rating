@@ -50,22 +50,41 @@ var users = {
       'common/**/*.html'
     ]
   },
-  employer:{
+  employee:{
     css:[
       'dependencies/**/*.css',
       'common/**/*.css',
-      'employer/**/*.css'
+      'employee/**/*.css'
     ],
     js:[
       'dependencies/angular/angular.js',
       'dependencies/angular/*.js',
       'dependencies/lodash/*.js',
-      'employer/app.js',
-      'employer/**/*.js',
+      'employee/app.js',
+      'employee/**/*.js',
       'common/**/*.js'
     ],
     templates:[
-      'employer/**/*.html',
+      'employee/**/*.html',
+      'common/**/*.html'
+    ]
+  },
+  administrator:{
+    css:[
+      'dependencies/**/*.css',
+      'common/**/*.css',
+      'administrator/**/*.css'
+    ],
+    js:[
+      'dependencies/angular/angular.js',
+      'dependencies/angular/*.js',
+      'dependencies/lodash/*.js',
+      'administrator/app.js',
+      'administrator/**/*.js',
+      'common/**/*.js'
+    ],
+    templates:[
+      'administrator/**/*.html',
       'common/**/*.html'
     ]
   }
