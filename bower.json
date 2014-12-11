@@ -20,7 +20,8 @@
     "angular-animate": "latest",
     "angular-mocks": "latest",
     "foundation": "latest",
-    "lodash": "latest"
+    "lodash": "latest",
+    "socket.io-client":"0.9.16"
   },
   "install": {
     "path": {
