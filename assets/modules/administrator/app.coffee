@@ -11,7 +11,7 @@ app.config [
       template: JST["common/summary/summary.html"]()
       controller:"SummaryCtrl"
     .when "/day/:id",
-      template: JST["employee/day/day.html"]()
+      template: JST["administrator/day/day.html"]()
       controller: "DayCtrl"
     .when "/review/:id",
       template: JST["common/review/review.html"]()

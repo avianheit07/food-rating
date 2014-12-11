@@ -2,17 +2,35 @@ doctype html
 html(ng-app="FoodApp")
     head
         title Employee
-        base(href="/")
+        base(href="http://#{base}/")
         meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
 
         // STYLES
+        link(rel="stylesheet", href="/styles/dependencies/foundation/foundation.css")
+        link(rel="stylesheet", href="/styles/dependencies/foundation/normalize.css")
+        link(rel="stylesheet", href="/styles/common/review/review.css")
+        link(rel="stylesheet", href="/styles/common/star/star.css")
+        link(rel="stylesheet", href="/styles/common/summary/summary.css")
+        link(rel="stylesheet", href="/styles/employee/app.css")
+        link(rel="stylesheet", href="/styles/employee/rate/rate.css")
         // STYLES END
 
     body
         // TEMPLATES
+        script(type="text/javascript", src="/templates/jst_employee.js")
         // TEMPLATES END
         section
             ng-view
         // SCRIPTS
+        script(src="/js/dependencies/angular/angular.js")
+        script(src="/js/dependencies/angular/angular-animate.js")
+        script(src="/js/dependencies/angular/angular-resource.js")
+        script(src="/js/dependencies/angular/angular-route.js")
+        script(src="/js/dependencies/lodash/lodash.js")
+        script(src="/js/employee/app.js")
+        script(src="/js/employee/rate/RateCtrl.js")
+        script(src="/js/common/review/ReviewCtrl.js")
+        script(src="/js/common/star/StarDirective.js")
+        script(src="/js/common/summary/SummaryCtrl.js")
         // SCRIPTS END
 

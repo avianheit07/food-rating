@@ -15,3 +15,12 @@ app.config [
       controller: "ReviewCtrl"
     .otherwise redirectTo:"/"
 ]
+
+app.controller "LoginCtrl",[
+  "$scope"
+  ($s)->
+    $s.login = ->
+
+      document.location = "/auth/google/"
+    return
+]

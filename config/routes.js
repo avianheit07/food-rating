@@ -1,7 +1,24 @@
-
-module.exports.routes = {
+var toUnk = [
+  "/:unk",
+  "/review/:id",
+  "/rate/:id",
+  "/day/:id"
+]
+var routes = {
   '/': {
-    controller: 'SiteController',
+    controller: 'AuthController',
     action:'index'
+  },
+  '/logout':{
+    controller: 'AuthController',
+    action:'logout'
   }
 };
+toUnk.forEach(function(url){
+  routes[url] = {
+    controller: 'AuthController',
+    action: 'index',
+    skipAssets: true
+  }
+})
+module.exports.routes = routes;
