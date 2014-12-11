@@ -10,7 +10,7 @@ module.exports = (req, res, next) ->
   ]
   except.forEach (ex)->
     exception = true if url.indexOf(ex) isnt -1
-  if req.headers["food-api"] or url is "/login" or url is "/logout" or exception
+  if req.headers["food-api"] or url is "/login" or url is "/logout" or exception or req.isSocket
     next()
   else #login or logout
     View.render req, res
