@@ -23,3 +23,6 @@ module.exports =
         return
 
     ) req, res
+  logged: (req,res)->
+    res.json session: req.session.passport.user or false
+    return

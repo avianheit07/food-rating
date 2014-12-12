@@ -19,18 +19,7 @@ html(ng-app="FoodApp")
         a.button(ng-click="login()") Login with Google
         section
             ng-view
-            .row(ng-controller="ChatCtrl")
-                .column.small-4
-                    form
-                        input(type="text",ng-model="test.name")
-                        button(ng-click="save()") SAVE
-                    form
-                        input(type="text",ng-model="child.name")
-                        textarea(ng-model="child.message")
-                        button(ng-click="addChild()") ADD CHILD
-                    button.expand(ng-click="terminate()") TERMINATE
-                .column.small-8
-                    pre {{test|json}} 
+
         // SCRIPTS
         script(src="/js/dependencies/socket.io.js")
         script(src="/js/dependencies/angular/angular.js")
@@ -40,7 +29,7 @@ html(ng-app="FoodApp")
         script(src="/js/dependencies/lodash/lodash.js")
         script(src="/js/dependencies/sails.io.js")
         script(src="/js/public/app.js")
-        script(src="/js/public/ChatCtrl.js")
+        script(src="/js/common/_utils.js")
         script(src="/js/common/review/ReviewCtrl.js")
         script(src="/js/common/star/StarDirective.js")
         script(src="/js/common/summary/SummaryCtrl.js")

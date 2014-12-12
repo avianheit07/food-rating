@@ -1,23 +1,44 @@
 module.exports = {
   subscribe: (req,res)->
     data= req.params.all()
+    id = req.param "id"
+    if id
+      Test.findOneById id
+      .exec (err,test)->
+        if !err
+          if req.isSocket and req.method is 'PUT'
 
-    Test.findOneById req.param('id')
-    .exec (err,test)->
-      if !err
-        if req.isSocket and req.method is 'PUT'
+              test.name = req.param "name"
+              test.children = req.param "children"
 
-            test.name = req.param "name"
-            test.children = req.param "children"
+              test.save (err)->
+                room = "test/"+test.id
+                sails.sockets.broadcast room,room,test
+                res.json hello:"world"
+                #Test.publishUpdate(test.id,test)
 
-            test.save (err)->
+          else if req.isSocket
+            sails.sockets.join req.socket, 'test/'+id
+            res.json room:'test/'+id
+          else
+            res.json test
+    else
+      if req.isSocket and req.method is "POST"
+        Test.create req.body
+        .exec (err,test)->
+          if err
+            console.log err
+          else
+            sails.sockets.broadcast "test/all","test/all",test
+            #Test.publishCreate test
+      else if req.isSocket
+        sails.sockets.join req.socket, 'test/all'
+      else
+        Test.find()
+        .exec (err,data)->
+          if !err
+            res.json data
 
-              Test.publishUpdate(test.id,test)
-
-        else if req.isSocket
-          Test.subscribe req.socket,test
-        else
-          res.json test
   terminate: (req,res)->
 
     id = req.param "id"

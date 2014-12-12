@@ -18,3 +18,5 @@ app.config [
       controller:"ReviewCtrl"
     .otherwise redirectTo:"/"
 ]
+app.run ($http)->
+  $http.defaults.headers.common['food-api'] = true

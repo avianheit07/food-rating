@@ -64,11 +64,12 @@ module.exports.http = {
 
   customMiddleware: function(app) {
 
+    port = app.settings.env === "production" ? 3000:1337;
 
     passport.use(new GoogleStrategy({
       clientID: '105142472627-8cccqoi96disv0eubodbrnkh8d97oqc2.apps.googleusercontent.com',
       clientSecret: 'HR8YWxHqqHraN6y6APQpa-h5',
-      callbackURL: 'http://localhost:1337/auth/google/callback'
+      callbackURL: 'http://localhost:'+port+'/auth/google/callback'
     }, verifyHandler));
     
     app.use(passport.initialize());
