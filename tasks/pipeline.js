@@ -38,9 +38,11 @@ var users = {
       'public/**/*.css'
     ],
     js:[
+      'dependencies/socket.io.js',
       'dependencies/angular/angular.js',
       'dependencies/angular/*.js',
       'dependencies/lodash/*.js',
+      'dependencies/**/*.js',
       'public/app.js',
       'public/**/*.js',
       'common/**/*.js'
@@ -57,9 +59,11 @@ var users = {
       'employee/**/*.css'
     ],
     js:[
+      'dependencies/socket.io.js',
       'dependencies/angular/angular.js',
       'dependencies/angular/*.js',
       'dependencies/lodash/*.js',
+      'dependencies/**/*.js',
       'employee/app.js',
       'employee/**/*.js',
       'common/**/*.js'
@@ -76,9 +80,11 @@ var users = {
       'administrator/**/*.css'
     ],
     js:[
+      'dependencies/socket.io.js',
       'dependencies/angular/angular.js',
       'dependencies/angular/*.js',
       'dependencies/lodash/*.js',
+      'dependencies/**/*.js',
       'administrator/app.js',
       'administrator/**/*.js',
       'common/**/*.js'

@@ -22,13 +22,16 @@ html(ng-app="FoodApp")
         section
             ng-view
         // SCRIPTS
+        script(src="/js/dependencies/socket.io.js")
         script(src="/js/dependencies/angular/angular.js")
         script(src="/js/dependencies/angular/angular-animate.js")
         script(src="/js/dependencies/angular/angular-resource.js")
         script(src="/js/dependencies/angular/angular-route.js")
         script(src="/js/dependencies/lodash/lodash.js")
+        script(src="/js/dependencies/sails.io.js")
         script(src="/js/employee/app.js")
         script(src="/js/employee/rate/RateCtrl.js")
+        script(src="/js/common/_utils.js")
         script(src="/js/common/review/ReviewCtrl.js")
         script(src="/js/common/star/StarDirective.js")
         script(src="/js/common/summary/SummaryCtrl.js")

@@ -12,6 +12,14 @@ var routes = {
   '/logout':{
     controller: 'AuthController',
     action:'logout'
+  },
+  '/test/subscribe/:id':{
+    controller: 'TestController',
+    action:'subscribe'
+  },
+  '/test/terminate/:id':{
+    controller: 'TestController',
+    action:'terminate'
   }
 };
 toUnk.forEach(function(url){
