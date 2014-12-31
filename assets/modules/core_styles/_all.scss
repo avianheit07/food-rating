@@ -83,6 +83,7 @@ body{
 	position: absolute;
 	display: block;
 	color: $blue;
+	cursor: pointer;
 	text-align: center;
 	width: 100px;
 	top: 20px;
@@ -90,13 +91,16 @@ body{
 	.month{
 		font-size: 1.5em;
 		line-height: 1em;
+		text-transform: uppercase;
 	}
 	.date-num{
 		font-size: 2.5em;
 		line-height: 1em;
+		text-transform: uppercase;
 	}
 	.day{
 		font-size: 0.8em;
+		text-transform: uppercase;
 	}
 }
 .menu-items{

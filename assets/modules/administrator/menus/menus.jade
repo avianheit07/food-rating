@@ -1,13 +1,33 @@
 section.page
   ul#calendar
     li(ng-repeat="menu in menus track by menu.id")
-      .date
+      .date(ng-click="edit(menu)")
         .month {{menu.date|date:'MMM'}}
         .date-num {{menu.date|date:'dd'}}
-        .day {{menu.date|date:'EEE'}}
+        .day {{menu.date|date:'EEEE'}}
       ul.menu-items
         .menu-item(ng-repeat="food in menu.foods",ng-class="{selected: selected($index,$parent.$index)}",ng-click="select($index,$parent.$index)") 
           p {{food.name}}
           face-rater(ng-model="orders[$parent.$index].rating",ng-show="eaten(menu.date)")
 
-  #add-menu +
+  #add-menu(ng-click="edit()") +
+
+  #edit-modal(ng-show="schedule")
+    form
+      label Date
+      input(type="date",ng-model="schedule.date")
+      label Food
+      .row.collapse(ng-repeat="food in schedule.foods")
+        .column.small-10
+          input(type="text",ng-model="food.name",placeholder="food item name")
+        .column.small-2
+          .button.tiny.expand(ng-click="schedule.foods.splice($index,1)") x
+      .row.collapse
+        .column.small-12
+          .button.tiny.expand(ng-click="schedule.foods.push({name:''})") ADD NEW FOOD
+      .row.collapse
+        .column.small-6
+          .button.tiny.expand.secondary(ng-click="schedule = null") CANCEL
+        .column.small-6
+          .button.tiny.expand(ng-click="save(schedule)") SAVE
+
