@@ -35,6 +35,7 @@
   }
   &.selected{
     background: $blue;
+    border: white 1px solid;
     p{
       color: white;
     }
@@ -62,5 +63,31 @@
   &:hover{
     background: rgba(white,1);
     box-shadow: rgba(0,0,0,0.3) 0px 5px 6px;
+  }
+}
+
+#edit-modal{
+  position: fixed;
+  background: rgba(white,0.8);
+  top:60px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
+  form{
+    padding: 10px;
+    position: absolute;
+    background: white;
+
+    border-radius: 10px;
+
+    width: 450px;
+
+    left: 50%;
+    margin-left: -225px;
+
+    height: auto;
+    top: 200px;
+    box-shadow: rgba(0,0,0,0.2) 0px 10px 10px;
   }
 }

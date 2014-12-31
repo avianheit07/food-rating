@@ -20,6 +20,10 @@ module.exports =
         if err
           res.json err
         else
+
+          if data.length
+            data.sort (a,b)->
+              return (new Date b.date) - (new Date a.date)
           res.json data
     return
   save: (req,res)->
