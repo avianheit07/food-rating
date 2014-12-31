@@ -10,3 +10,6 @@ module.exports =
     role:
       type:"INTEGER"
       defaultsTo: 0
+    shift:
+      defaultsTo: 0
+      type:"INTEGER"

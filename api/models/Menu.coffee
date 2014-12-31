@@ -14,3 +14,6 @@ module.exports =
     date:"date"
     foods:"ARRAY"
     default:"INTEGER"
+    orders:
+      collection: "order"
+      via: "menu"

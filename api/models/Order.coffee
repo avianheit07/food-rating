@@ -9,4 +9,4 @@ module.exports =
       model:"user"
     food:"INTEGER"
     comment:"STRING"
-    score:"INTEGER"
+    rating:"INTEGER"
