@@ -1,1 +1,66 @@
 @import '../core_styles/all';
+
+.menu-item{
+  position: relative;
+  height: auto;
+  min-height: 160px;
+  border-right: $gray 1px solid;
+  p{
+    font-size: 2em;
+    line-height: 1em;
+    color: $gray*0.8;
+  }
+  overflow: hidden;
+  padding: 10px;
+  font-weight: 300;
+  cursor: pointer;
+  .rate-panel{
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: rgba($blue,0.8);
+    label{
+      color: white;
+    }
+  }
+  .face-rater{
+    display: none;
+  }
+  &:hover{
+    background: rgba($blue,0.2);
+  }
+  &.selected{
+    background: $blue;
+    p{
+      color: white;
+    }
+    .face-rater{
+      display: block;
+    }
+  }
+}
+
+#add-menu{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: 1.4em;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background: rgba(white,0.8);
+  border-radius: 25px;
+  box-shadow: rgba(0,0,0,0.5) 0px 3px 5px;
+  cursor: pointer;
+  color:rgba(0,0,0,0.5);
+  border: rgba(0,0,0,0.1) 1px solid;
+  &:hover{
+    background: rgba(white,1);
+    box-shadow: rgba(0,0,0,0.3) 0px 5px 6px;
+  }
+}

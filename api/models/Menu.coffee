@@ -3,8 +3,6 @@
   foods:[
     {
       name:""
-      score:0 / 5
-      nightShiftOnly:true
     }
   ]
 ###
@@ -13,7 +11,6 @@ module.exports =
   attributes:
     date:"date"
     foods:"ARRAY"
-    default:"INTEGER"
     orders:
       collection: "order"
       via: "menu"

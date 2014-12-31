@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="1" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-23" fill="#D0011B" sketch:type="MSShapeGroup" x="0" y="0" width="29.2682927" height="30" rx="2"></rect>
+            <path d="M10.6169297,22.6470588 C10.6169297,22.6470588 10.6169297,20 14.9306446,20 C19.2443596,20 19.2443596,22.6470588 19.2443596,22.6470588" id="Line-7" stroke="#FFFFFF" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <g id="Oval-22-+-Rectangle-24" transform="translate(13.199426, 2.352941)" sketch:type="MSShapeGroup">
+                <ellipse id="Oval-22" fill="#FFFFFF" cx="7.46054519" cy="8.23529412" rx="4.59110473" ry="4.70588235"></ellipse>
+                <path d="M0.378241439,4.92368594 L12.5546584,0.29619273 L15.3658537,6.84101994 L3.18943674,11.4685132 L0.378241439,4.92368594 L0.378241439,4.92368594 Z" id="Rectangle-24" fill="#D0011B"></path>
+            </g>
+            <g id="Oval-22-+-Rectangle-25" transform="translate(8.385940, 9.102941) scale(-1, 1) translate(-8.385940, -9.102941) translate(0.703013, 2.352941)" sketch:type="MSShapeGroup">
+                <ellipse id="Oval-22" fill="#FFFFFF" cx="7.46054519" cy="8.23529412" rx="4.59110473" ry="4.70588235"></ellipse>
+                <path d="M0.378241439,4.92368594 L12.5546584,0.29619273 L15.3658537,6.84101994 L3.18943674,11.4685132 L0.378241439,4.92368594 L0.378241439,4.92368594 Z" id="Rectangle-24" fill="#D0011B"></path>
+            </g>
+        </g>
+    </g>
+</svg>

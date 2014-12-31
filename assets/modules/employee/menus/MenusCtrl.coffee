@@ -1,4 +1,4 @@
-app.controller "RateCtrl",[
+app.controller "MenusCtrl",[
   "$scope"
   ($s)->
 

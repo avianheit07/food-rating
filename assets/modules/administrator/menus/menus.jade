@@ -1,0 +1,13 @@
+section.page
+  ul#calendar
+    li(ng-repeat="menu in menus track by menu.id")
+      .date
+        .month {{menu.date|date:'MMM'}}
+        .date-num {{menu.date|date:'dd'}}
+        .day {{menu.date|date:'EEE'}}
+      ul.menu-items
+        .menu-item(ng-repeat="food in menu.foods",ng-class="{selected: selected($index,$parent.$index)}",ng-click="select($index,$parent.$index)") 
+          p {{food.name}}
+          face-rater(ng-model="orders[$parent.$index].rating",ng-show="eaten(menu.date)")
+
+  #add-menu +

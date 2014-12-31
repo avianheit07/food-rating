@@ -8,20 +8,16 @@ app.config [
 
     $routeProvider
     .when "/",
-      template: JST["common/summary/summary.html"]()
-      controller:"SummaryCtrl"
-    .when "/review/:id",
-      template: JST["common/review/review.html"]()
-      controller: "ReviewCtrl"
-    .otherwise redirectTo:"/"
+      template: JST["public/menus/menus.html"]()
+      controller:"MenusCtrl"
 ]
 app.run ($http)->
   $http.defaults.headers.common['food-api'] = true
+
 app.controller "LoginCtrl",[
   "$scope"
   ($s)->
     $s.login = ->
-
       document.location = "/auth/google/"
     return
 ]

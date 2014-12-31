@@ -7,18 +7,16 @@ html(ng-app="FoodApp")
         // STYLES
         link(rel="stylesheet", href="/styles/dependencies/foundation/foundation.css")
         link(rel="stylesheet", href="/styles/dependencies/foundation/normalize.css")
-        link(rel="stylesheet", href="/styles/common/review/review.css")
-        link(rel="stylesheet", href="/styles/common/star/star.css")
-        link(rel="stylesheet", href="/styles/common/summary/summary.css")
+        link(rel="stylesheet", href="/styles/common/rate/rate.css")
         link(rel="stylesheet", href="/styles/public/app.css")
+        link(rel="stylesheet", href="/styles/public/menus/menus.css")
         // STYLES END
     body(ng-controller="LoginCtrl")
         // TEMPLATES
         script(type="text/javascript", src="/templates/jst_public.js")
         // TEMPLATES END
-        a.button(ng-click="login()") Login with Google
-        section
-            ng-view
+        #login(ng-click="login()") LOGIN USING CORPORATE GMAIL ACCOUNT    
+        ng-view
 
         // SCRIPTS
         script(src="/js/dependencies/socket.io.js")
@@ -29,8 +27,7 @@ html(ng-app="FoodApp")
         script(src="/js/dependencies/lodash/lodash.js")
         script(src="/js/dependencies/sails.io.js")
         script(src="/js/public/app.js")
+        script(src="/js/public/menus/MenusCtrl.js")
         script(src="/js/common/_utils.js")
-        script(src="/js/common/review/ReviewCtrl.js")
-        script(src="/js/common/star/StarDirective.js")
-        script(src="/js/common/summary/SummaryCtrl.js")
+        script(src="/js/common/rate/FaceRaterDirective.js")
         // SCRIPTS END

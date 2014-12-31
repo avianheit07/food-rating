@@ -34,6 +34,6 @@ module.exports = {
   // log: {
   //   level: "silent"
   // }
-  port: 3000,
+  port: 8080,
   environment:'production'
 };

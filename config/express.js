@@ -26,9 +26,10 @@ var verifyHandler = function(token, tokenSecret, profile, done) {
           data.lastname = profile.name.familyName;
         }
         var allowed = false;
-        if ((data.email.indexOf("@meditab.com")) > -1 || (data.email.indexOf("@cosmetisuite.com ")) > -1 || (data.email.indexOf("@suiterx.com")) > -1){
+        /*if ((data.email.indexOf("@meditab.com")) > -1 || (data.email.indexOf("@cosmetisuite.com ")) > -1 || (data.email.indexOf("@suiterx.com")) > -1){
           allowed = true;
-        }
+        }*/
+        allowed = true;
         if(allowed){
 
           User.create(data, function(err, user) {

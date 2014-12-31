@@ -8,15 +8,15 @@ app.config [
 
     $routeProvider
     .when "/",
-      template: JST["common/summary/summary.html"]()
-      controller:"SummaryCtrl"
-    .when "/day/:id",
-      template: JST["administrator/day/day.html"]()
-      controller: "DayCtrl"
-    .when "/review/:id",
-      template: JST["common/review/review.html"]()
-      controller:"ReviewCtrl"
-    .otherwise redirectTo:"/"
+      template: JST["administrator/menus/menus.html"]()
+      controller:"MenusCtrl"
+]
+app.controller "LoginCtrl",[
+  "$scope"
+  ($s)->
+    $s.logout = ->
+      document.location = "/logout"
+    return
 ]
 app.run ($http)->
   $http.defaults.headers.common['food-api'] = true
