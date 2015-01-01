@@ -8,5 +8,6 @@ module.exports =
       type:"STRING"
       model:"user"
     food:"INTEGER"
+    pastSelected:"INTEGER"
     comment:"STRING"
     rating:"INTEGER"

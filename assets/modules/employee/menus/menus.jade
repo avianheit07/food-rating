@@ -1,1 +1,15 @@
-h1 Create Edit / Food
+section.page
+  ul#calendar
+    li(ng-repeat="menu in menus track by menu.id")
+      .date
+        .month {{menu.date|date:'MMM'}}
+        .date-num {{menu.date|date:'dd'}}
+        .day {{menu.date|date:'EEEE'}}
+      ul.menu-items
+        .menu-item(ng-repeat="food in menu.foods",ng-class="{selected: selected($index,$parent.$index)}",ng-click="select($parent.$index,$index)") 
+          p {{food.name}}
+          face-rater(ng-model="orders[$parent.$index].rating",ng-show="eaten(menu.date)",on-select="select(pidx)",pidx="{{$parent.$index}}")
+          #comment-btn(ng-click="orders[$parent.$index].openComment = true") COMMENT
+          .comment-box(ng-show="orders[$parent.$index].openComment")
+            textarea(ng-model="orders[$parent.$index].comment")
+            div(ng-click="orders[$parent.$index].openComment = false;select($parent.$index)") SAVE

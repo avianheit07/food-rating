@@ -12,12 +12,13 @@ html(ng-app="FoodApp")
         link(rel="stylesheet", href="/styles/employee/app.css")
         // STYLES END
 
-    body
+    body(ng-controller="LoginCtrl")
         // TEMPLATES
         script(type="text/javascript", src="/templates/jst_employee.js")
         // TEMPLATES END
         section
             ng-view
+        #logout(ng-click="logout()") LOGOUT
         // SCRIPTS
         script(src="/js/dependencies/socket.io.js")
         script(src="/js/dependencies/angular/angular.js")

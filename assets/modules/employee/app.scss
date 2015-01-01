@@ -1,1 +1,64 @@
 @import '../core_styles/all';
+
+.menu-item{
+  position: relative;
+  height: auto;
+  min-height: 160px;
+  border-right: $gray 1px solid;
+  p{
+    font-size: 2em;
+    line-height: 1em;
+    color: $gray*0.8;
+  }
+  overflow: hidden;
+  padding: 10px;
+  font-weight: 300;
+  cursor: pointer;
+  #comment-btn{
+    position: absolute;
+    color: white;
+    background: $blue;
+    opacity: 0.5;
+    padding: 5px;
+    top: 5px;
+    right: 5px;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  .comment-box{
+    display: none;
+    padding: 10px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: rgba($blue,0.8);
+    label{
+      color: white;
+    }
+    div{
+      color: white;
+    }
+  }
+  .face-rater{
+    display: none;
+  }
+  &:hover{
+    background: rgba($blue,0.2);
+  }
+  &.selected{
+    .comment-box{
+      display: block;
+    }
+    background: $blue;
+    border: white 1px solid;
+    p{
+      color: white;
+    }
+    .face-rater{
+      display: block;
+    }
+  }
+}

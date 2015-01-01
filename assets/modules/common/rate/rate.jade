@@ -1,2 +1,2 @@
 .face-rater
-  img(ng-repeat="score in scores",ng-src="/images/rating/{{score}}.svg",ng-class="{selected: selected($index)}",ng-click="select($index)")
+  img(ng-repeat="score in scores",ng-src="/images/rating/{{score}}.svg",ng-class="{selected: selected(score)}",ng-click="select(score)")

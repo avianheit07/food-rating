@@ -27,7 +27,6 @@ app.controller "MenusCtrl",[
 
             newOrders[i] = newOrder
             return
-
           $s.orders = newOrders
 
 
@@ -37,37 +36,43 @@ app.controller "MenusCtrl",[
 
     # listen to updates in menu
     io.socket.on "menu/latest",(menu)->
-      obj = menu
-      obj = menu[0] if menu.length
+      menu = menu[0] if Array.isArray menu
+      if !menu.menu
+        obj = menu
+        obj = menu[0] if menu.length
 
-      idx = utils.getIndexById obj.id,$s.menus
+        idx = utils.getIndexById obj.id,$s.menus
+        if idx is -1
+          $s.menus.unshift obj
+          newOrder =
+            menu: obj.id
+          $s.orders.unshift newOrder
+        $s.menus[idx] = obj if idx > -1
 
-      if idx is -1
-        $s.menus.unshift obj
-        newOrder =
-          menu: obj.id
-        $s.orders.unshift newOrder
-      $s.menus[idx] = obj if idx > -1
+        $s.$digest()
+      else
+        #must be order
+        console.log menu
+      return
 
-      $s.$digest()
-    
+    #select a food then saves it, but also keeps track of past selected food
+    $s.select = (menuIndex,index)->
+      if ($s.orders[menuIndex].food isnt index) or index is undefined
+        type = (if $s.orders[menuIndex].id then "put" else "post")
 
-    # TEST
-    $s.orders.push {
-      id:"TEST"
-      menu:"TEST"
-      user:"TEST"
-      comment:""
-    }
-    $s.select = (index,menuIndex)->
-      $s.orders[menuIndex].food = index
-      # then SAVE
-      type = (if $s.orders[menuIndex].id then "put" else "post")
+        if type is "put" and index > -1
+          $s.orders[menuIndex].pastSelected = $s.orders[menuIndex].food
+        
+        $s.orders[menuIndex].food = index if index > -1
 
-      obj = angular.fromJson angular.toJson $s.orders[menuIndex]
-      io.socket[type] "/order/save",obj,(resData,jwres)->
-        for key in resData
-          $s.orders[menuIndex][key] = resData[key]
+        obj = angular.fromJson angular.toJson $s.orders[menuIndex]
+
+        io.socket[type] "/order/save",obj,(resData,jwres)->
+          obj = resData
+          obj = resData[0] if Array.isArray resData
+          angular.forEach obj, (val,key)->
+            $s.orders[menuIndex][key] = obj[key]
+
       return
     $s.selected = (index,menuIndex)->
       test = false
@@ -90,16 +95,17 @@ app.controller "MenusCtrl",[
         $s.schedule =
           date: new Date()
           foods:[
-            name:""
+            name:"",orders:0
           ]
       return
 
-    $s.save = (obj)->
-      type = (if obj.id then "put" else "post")
-      obj = angular.fromJson angular.toJson obj
-      io.socket[type] "/menu/save",obj,(resData,jwres)->
-        for key in resData
-          obj[key] = resData[key]
+    $s.save = ->
+      type = (if $s.schedule.id then "put" else "post")
+      convertedObj = angular.fromJson angular.toJson $s.schedule
+      io.socket[type] "/menu/save",convertedObj,(resData,jwres)->
+
+        angular.forEach resData, (val,key)->
+          $s.schedule[key] = val if key isnt 'date'
       return
     return
 ]

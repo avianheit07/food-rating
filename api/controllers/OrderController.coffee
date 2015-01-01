@@ -43,22 +43,27 @@ module.exports =
         if err
           res.json err
         else
-          sails.sockets.broadcast "order/latest","order/latest",newOrder
+          sails.sockets.broadcast "menu/latest","menu/latest",newOrder
           res.json newOrder
           return
+
     else if req.method is "PUT"
 
       ###
         be able to send the order update to the menu items being listened
 
       ###
-      id = req.body.id
+      order = req.body
+      id = order.id
       if id
-        Order.update id:id,req.body
+        Order.update id:id,order
         .exec (err,updatedOrder)->
           if err
             res.json err
           else
-            sails.sockets.broadcast "order/latest","order/latest",updatedOrder
+            sails.sockets.broadcast "menu/latest","menu/latest",updatedOrder
             res.json updatedOrder
           return
+  count: (req,res)->
+
+    return

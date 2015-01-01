@@ -14,8 +14,10 @@ module.exports =
       filter =
         date:
           '>=':minDate
+      populate = false
 
       Menu.find filter
+      .populate "orders"
       .exec (err,data)->
         if err
           res.json err

@@ -14,8 +14,20 @@
   padding: 10px;
   font-weight: 300;
   cursor: pointer;
-  .rate-panel{
-    opacity: 0;
+  #comment-btn{
+    position: absolute;
+    color: white;
+    background: $blue;
+    opacity: 0.5;
+    padding: 5px;
+    top: 5px;
+    right: 5px;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  .comment-box{
+    display: none;
     padding: 10px;
     position: absolute;
     left: 0px;
@@ -26,6 +38,9 @@
     label{
       color: white;
     }
+    div{
+      color: white;
+    }
   }
   .face-rater{
     display: none;
@@ -34,6 +49,9 @@
     background: rgba($blue,0.2);
   }
   &.selected{
+    .comment-box{
+      display: block;
+    }
     background: $blue;
     border: white 1px solid;
     p{
